@@ -1,0 +1,446 @@
+:root {
+  --purple500: #281154;
+  --purple300: #270082;
+  --purple600: #1b0058;
+  --red600: #dc0000;
+  --body: #f9f6ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  scroll-behavior: smooth;
+}
+
+/** due to sticky position of navbar music was not visible so we gave 50px of margin to it */
+section {
+  scroll-margin: 50px;
+}
+
+/*? Navbar */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 200;
+  box-shadow: 5px 5px 5px rgba(0, 1, 9, 0.5);
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(39, 0, 130, 0.1);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+#check {
+  display: none;
+}
+
+.icons {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+ul {
+  list-style: none;
+  text-decoration: none;
+  font-size: 19px;
+  & a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  & li {
+    padding: 10px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 15px 0;
+
+  & ul {
+    display: flex;
+    gap: 20px;
+
+    & a:hover,
+    & a:focus {
+      color: white;
+    }
+
+    & a::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      width: 0%;
+      border-radius: 3px;
+      /* display: block; */
+      left: 0;
+      bottom: 0;
+      /* right: 0; */
+      /* margin: 0 auto; */
+      background-color: white;
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+      pointer-events: none;
+    }
+    & a:hover::after,
+    & a:focus::after {
+      opacity: 1;
+      width: 50%;
+      transform: translate(50%); /*if we want to start from 50%*/
+    }
+  }
+}
+
+/*? Hero Section  */
+
+.hero-section {
+  background-image: url(images/hero_image.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  color: white;
+  place-items: center;
+  text-align: center;
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  & h1 {
+    font-size: 8.6rem;
+  }
+
+  & h3 {
+    font-size: 3.2rem;
+  }
+}
+
+/*? Music Section  */
+
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+button:hover {
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+
+.music-section {
+  padding-top: 5rem;
+  background: var(--purple500);
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    color: white;
+
+    & h2 {
+      font-size: 3.2rem;
+    }
+  }
+  & .primary-btn {
+    background-color: var(--red600);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 0.3rem;
+    /* border: 2px solid blanchedalmond; */
+  }
+}
+
+.container .ipad-iphone-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: -40rem;
+  position: relative;
+  top: 40rem;
+}
+
+.secondary-btn {
+  background-color: var(--purple300);
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 0.3rem;
+}
+
+.about-music {
+  padding-top: 50rem;
+  display: grid;
+  place-items: center;
+  gap: 4rem;
+  text-align: center;
+  margin-bottom: 5rem;
+
+  & h3 {
+    font-size: 2.4rem;
+  }
+}
+.about-music {
+  scroll-margin: -40rem;
+}
+
+/*? Video Section */
+
+.video-section {
+  background-image: url(images/video.png);
+  min-height: 80rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: grid;
+  place-items: center;
+  color: white;
+  text-align: center;
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: -20rem;
+  }
+}
+
+/*? Gift Section */
+.gift-section {
+  display: flex;
+  justify-content: center;
+  margin: 10rem 0;
+  gap: 5rem;
+
+  & .gift-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & h3 {
+      font-size: 2.4rem;
+    }
+    & p {
+      text-align: justify;
+    }
+  }
+  /* .gift-card img{
+    max-width: 1;
+  } */
+}
+
+/*? Footer Section */
+
+.footer-upper {
+  background-color: var(--purple600);
+  padding: 2rem;
+
+  & .container {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+
+    & .footer-links {
+      & h4 {
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid white;
+        margin-bottom: 1rem;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
+
+.footer-lower {
+  background-color: var(--purple300);
+  padding: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/*? MEDIA QUERY */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 40%;
+  }
+  .icons {
+    display: inline-flex;
+  }
+
+  /* jse hi menu-icon ko click krenge to display nhi hoga but close-icon display hoga */
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  .icons #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  #check {
+    display: none;
+  }
+
+  header .container ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    background: rgba(39, 0, 130, 0.1);
+    backdrop-filter: blur(50px);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-0px);
+    opacity: 0;
+  }
+
+  #check:checked ~ ul {
+    height: 240px;
+  }
+
+  #check:checked ~ ul {
+    transform: translateY(0);
+    transition-delay: calc(0.15s * var(--i));
+    opacity: 1;
+  }
+
+  nav ul a::after {
+    display: none;
+  }
+
+  /*? Gift section */
+  .gift-section {
+    flex-direction: column;
+  }
+
+  /*? footer */
+  .footer-upper .container {
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & .footer-links {
+      min-width: 200px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .gift-card img {
+    max-width: 100%;
+  }
+
+  .ipad-iphone-img {
+    margin-top: -10rem;
+    top: 20rem;
+  }
+
+  .ipad-iphone-img img,
+  .mac-img img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 62.5%;
+  }
+  .container .ipad-iphone-img {
+    margin-top: -30rem;
+    top: 30rem;
+  }
+
+  .about-music {
+    padding-top: 40rem;
+  }
+
+  .footer-upper .container {
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & .footer-links {
+      min-width: 200px;
+    }
+  }
+}
+
+@media (max-width: 590px) {
+  html {
+    font-size: 40%;
+  }
+
+  .container .ipad-iphone-img {
+    margin-top: -140px;
+    top: 150px;
+  }
+
+  .about-music {
+    padding-top: 30rem;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 20%;
+  }
+
+  .container .ipad-iphone-img {
+    margin-top: -110px;
+    top: 120px;
+  }
+
+  .about-music {
+    padding-top: 30rem;
+  }
+}
