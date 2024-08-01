@@ -149,11 +149,11 @@ nav {
     gap: 2rem;
   }
 
-  & h1 {
+  & .h1 {
     font-size: 8.6rem;
   }
 
-  & h3 {
+  & .h3 {
     font-size: 3.2rem;
   }
 }
